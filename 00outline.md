@@ -26,8 +26,20 @@ Building manifest lists with buildah:
 	* buildah manifest create $list
 	* buildah manifest add $list $image
 	* buildah manifest push $list $registry/$repository:$tag
+	* buildah manifest push --all $list $registry/$repository:$tag
+	* buildah rmi $list
+Using buildah manifest:
+	* add takes arguments
+	* our goal is to keep you from needing to use them
 Building images for different architectures:
 	* Build on actual hardware, push to registry, for each arch.  Build list, push list.
+		* Add images using their digests or arch-specific tags.
+		* The fastest (or second fastest) option.
 	* Build in a VM, push to registry, for each arch.  Build list, push list.
+		* Cross-arch VMs exist, are kind of slow.
+		* The slowest option.
 	* Cross-compile on build host for runtime arch, install onto a suitable base image, push along with list.
+		* Be sure to mark each image with the right architecture!
+		* The second fastest (or fastest) option.
 	* Build for runtime, emulate for RUN (qemu-user-static, more like qemu-user-magic, amirite?), push along with list.
+		* Faster than a cross-arch VM, probably slower than actual hardware.
