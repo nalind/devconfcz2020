@@ -13,6 +13,7 @@ How multi-arch images get pulled and run from registries:
 	* Registry hands back a lists of manifests.
 	* Client selects an image from the list.
 	* Client asks registry for the manifest for the chosen image.
+	* Registry hands back manifest for the image.
 	* Client asks for the layers and other things that make up the image.
 	* Client builds root filesystem, sets up namespaces, execs the entry point or command.
 How lists of images get built and pushed to registries:
