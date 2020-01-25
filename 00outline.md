@@ -37,7 +37,7 @@ Building images for different architectures:
 		* Add images using their digests or arch-specific tags.
 		* The fastest (or second fastest) option.
 	* Build in a VM, push to registry, for each arch.  Build list, push list.
-		* Cross-arch VMs exist, are kind of slow.
+		* Cross-arch VMs exist (libvirt-daemon-qemu), are kind of slow.
 		* The slowest option.
 	* Cross-compile on build host for runtime arch, install onto a suitable base image, push along with list.
 		* Be sure to mark each image with the right architecture!
